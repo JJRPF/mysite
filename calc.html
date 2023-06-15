@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    .calculator {
+      margin: 20px auto;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .calculator button {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <input type="text" id="result" class="form-control">
+      <div>
+        <button class="btn btn-primary" onclick="append('7')">7</button>
+        <button class="btn btn-primary" onclick="append('8')">8</button>
+        <button class="btn btn-primary" onclick="append('9')">9</button>
+        <button class="btn btn-primary" onclick="append('/')">/</button>
+      </div>
+      <div>
+        <button class="btn btn-primary" onclick="append('4')">4</button>
+        <button class="btn btn-primary" onclick="append('5')">5</button>
+        <button class="btn btn-primary" onclick="append('6')">6</button>
+        <button class="btn btn-primary" onclick="append('*')">*</button>
+      </div>
+      <div>
+        <button class="btn btn-primary" onclick="append('1')">1</button>
+        <button class="btn btn-primary" onclick="append('2')">2</button>
+        <button class="btn btn-primary" onclick="append('3')">3</button>
+        <button class="btn btn-primary" onclick="append('-')">-</button>
+      </div>
+      <div>
+        <button class="btn btn-primary" onclick="append('0')">0</button>
+        <button class="btn btn-primary" onclick="append('.')">.</button>
+        <button class="btn btn-primary" onclick="calculate()">=</button>
+        <button class="btn btn-primary" onclick="append('+')">+</button>
+      </div>
+      <div>
+        <button class="btn btn-danger" onclick="clearResult()">C</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function append(value) {
+      $('#result').val($('#result').val() + value);
+    }
+
+    function calculate() {
+      $('#result').val(eval($('#result').val()));
+    }
+
+    function clearResult() {
+      $('#result').val('');
+    }
+  </script>
+</body>
+</html>

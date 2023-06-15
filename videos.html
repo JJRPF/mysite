@@ -2,7 +2,14 @@
     <link rel="stylesheet" href="sitestyle.css">
 </head>
 <body>
-    <h1>THIS IS THE VIDEOS PAGE OF MY WEBSITE</h1>
+    var copy_text_val = document.querySelector('.copy_text');
+
+function Copy() {
+  copy_text_val.select();
+  document.execCommand("copy");
+  console.log(copy_text_val.value);
+}
+    <header>THIS IS THE VIDEOS PAGE OF MY WEBSITE</header>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/FOXlTtqoKtc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <a href="http://www.youtube.com/@JJR_YT">MY YOUTUBE CHANNEL</a> <caption>THIS IS MY YOUTUBE CHANNEL</caption>
 </body>
